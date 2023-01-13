@@ -5,6 +5,6 @@ runs:
   using: "composite"
   steps:
     - name: Auto Create
-      uses: cpdevtools/action-versions@v<%= versions.CPDEVTOOLS_ACTION_VERSIONS %>
+      uses: cpdevtools/action-versions@v0.5
       with:
         autoCreatePullRequest: true

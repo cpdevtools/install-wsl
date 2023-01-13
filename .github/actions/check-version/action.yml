@@ -6,6 +6,6 @@ runs:
   steps:
     - id: checkVersion
       name: Check Version
-      uses: cpdevtools/action-versions@v<%= versions.CPDEVTOOLS_ACTION_VERSIONS %>
+      uses: cpdevtools/action-versions@v0.5
       with:
         failInvalidCanCreate: true

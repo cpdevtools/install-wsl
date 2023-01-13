@@ -5,7 +5,7 @@ inputs:
   nodeVersion:
     description: "The version of NodeJs to install"
     required: false
-    default: "v<%= versions.NODEJS %>"
+    default: "v16.18.1"
   toNpm:
     description: "Publish to npm package registry"
     required: false
@@ -27,7 +27,7 @@ runs:
   using: "composite"
   steps:
     - if: ${{ inputs.toGithub == 'true' || inputs.toGithub == true}}
-      uses: actions/setup-node@v<%= versions.GITHUB_ACTIONS_CHECKOUT %>
+      uses: actions/setup-node@v3.1.0
       with:
         node-version: ${{ inputs.nodeVersion }}
         cache: "pnpm"
@@ -44,7 +44,7 @@ runs:
       shell: bash
 
     - if: ${{ inputs.toNpm == 'true' || inputs.toNpm == true}}
-      uses: actions/setup-node@v<%= versions.GITHUB_ACTIONS_CHECKOUT %>
+      uses: actions/setup-node@v3.1.0
       with:
         node-version: ${{ inputs.nodeVersion }}
         cache: "pnpm"

@@ -1,32 +1,58 @@
 {
-  "private": true,
   "name": "@cpdevtools/install-wsl",
   "version": "0.0.0-dev.0",
   "repository": "https://github.com/cpdevtools/install-wsl",
-  "license": "",
-  "author": "",
-  "keywords": [],
-  "description": "",
-  "scripts": {
-    "prepare": "run-s prepare:*",
-    "prepare:build": "tsc -p .schematic/tsconfig.json",
-    "prepare:initialize": "pnpm run schematics && pnpm i && git add --all && git commit -a -m \"template initialized\"",
-    "schematics": "schematics .:initialize --debug=false"
+  "typings": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "engines": {
+    "node": ">=14.16"
   },
-  "schematics": ".schematic/collection.json",
+  "publishConfig": {
+    "access": "public"
+  },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown"
   },
+  "scripts": {
+    "prepare": "run-s prepare:*",
+    "prepare:clean-tags": "pnpm run clean-tags",
+    "prepare:husky": "husky install",
+    "prepare:build": "pnpm run build",
+    "prepare:link": "pnpm run link",
+    "pre-commit": "run-s pre-commit:*",
+    "pre-commit:build": "pnpm run build",
+    "pre-commit:tags": "pnpm run clean-tags",
+    "clean-tags": "git tag | xargs git tag -d",
+    "build": "run-s build:*",
+    "build:ts": "tsc -p tsconfig.json",
+    "build:copy-package": "ts-node .scripts/copy-package.ts",
+    "start": "tsc -w -p .schematic/tsconfig.json",
+    "link": "cd ./dist && pnpm unlink && pnpm link --global",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier --write --ignore-unknown .",
+    "reset-hard": "run-s reset-hard:*",
+    "reset-hard:git-clean": "git clean -dfx && git reset --hard",
+    "reset-hard:install": "pnpm install",
+    "pack": "run-s pack:*",
+    "pack:npm-pack": "cd dist && mkdir ./pack && pnpm pack --pack-destination ./pack",
+    "release": "run-s release:*",
+    "release:publish": "pnpm publish ./dist --access public --publish-branch 'release/latest'",
+    "actions-test": "pnpm run test",
+    "actions-build": "pnpm run build",
+    "actions-pack": "pnpm run pack",
+    "actions-publish": "pnpm run release"
+  },
   "devDependencies": {
-    "@angular-devkit/schematics": "15.1.0",
-    "@angular-devkit/schematics-cli": "15.1.0",
-    "@cpdevtools/lib-node-utilities": "0.4.49",
     "@types/node": "18.11.18",
-    "@vercel/ncc": "0.36.0",
     "husky": "8.0.3",
     "lint-staged": "13.1.0",
     "npm-run-all2": "6.0.4",
-    "prettier": "2.8.2",
+    "prettier": "2.8.2"
+  },
+  "dependencies": {
+    "@cpdevtools/lib-node-utilities": "0.4.49",
+    "ts-node": "10.9.1",
+    "tslib": "2.4.1",
     "type-fest": "3.5.1",
     "typescript": "4.9.4"
   },
