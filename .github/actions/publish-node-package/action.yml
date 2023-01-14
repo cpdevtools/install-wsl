@@ -27,7 +27,7 @@ runs:
   using: "composite"
   steps:
     - if: ${{ inputs.toGithub == 'true'}}
-      uses: actions/setup-node@v3.1.0
+      uses: actions/setup-node@v3.6.0
       with:
         node-version: ${{ inputs.nodeVersion }}
         cache: "pnpm"
@@ -44,7 +44,7 @@ runs:
       shell: bash
 
     - if: ${{ inputs.toNpm == 'true'}}
-      uses: actions/setup-node@v3.1.0
+      uses: actions/setup-node@v3.6.0
       with:
         node-version: ${{ inputs.nodeVersion }}
         cache: "pnpm"

@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
       - name: Check Version
         uses: ./.github/actions/check-version
 
@@ -19,7 +19,7 @@ jobs:
     needs: setup
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
 
       - name: Install Node & Dependencies
         uses: ./.github/actions/setup-node
@@ -42,7 +42,7 @@ jobs:
     needs: publish
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
 
       - name: Create Release
         uses: ./.github/actions/create-release
