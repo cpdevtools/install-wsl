@@ -1,11 +1,11 @@
 {
   "name": "@cpdevtools/install-wsl",
-  "version": "0.0.1-dev.1",
+  "version": "0.0.1-dev.2",
   "repository": "https://github.com/cpdevtools/install-wsl",
-  "typings": "./dist/index.d.ts",
-  "main": "./dist/index.js",
+  "typings": "./index.d.ts",
+  "main": "./index.js",
   "bin": {
-    "install-wsl": "./dist/cli.js"
+    "install-wsl": "./cli.js"
   },
   "engines": {
     "node": ">=14.16"
@@ -40,7 +40,7 @@
     "pack": "run-s pack:*",
     "pack:npm-pack": "cd dist && mkdir ./pack && pnpm pack --pack-destination ./pack",
     "release": "run-s release:*",
-    "release:publish": "pnpm publish ./dist --access public --publish-branch 'release/latest'",
+    "release:publish": "pnpm publish ./pack --access public --publish-branch 'release/latest'",
     "actions-test": "pnpm run test",
     "actions-build": "pnpm run build",
     "actions-pack": "pnpm run pack",
