@@ -22,6 +22,7 @@ runs:
       env:
         GITHUB_TOKEN: ${{ inputs.githubToken }}
       with:
+        tag: v${{ steps.version.outputs.targetVersion }}
         name: Release v${{ steps.version.outputs.targetVersion }}
         body: |
           Generated Release v${{ steps.version.outputs.targetVersion }}
