@@ -28,6 +28,7 @@
     "build:ts": "tsc -p tsconfig.json",
     "build:copy-package": "ts-node .scripts/copy-package.ts",
     "start": "tsc -w -p .schematic/tsconfig.json",
+    "test": "echo \"No tests to run.\"",
     "link": "cd ./dist && pnpm unlink && pnpm link --global",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier --write --ignore-unknown .",
