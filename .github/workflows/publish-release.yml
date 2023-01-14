@@ -33,8 +33,9 @@ jobs:
       - name: Publish
         uses: ./.github/actions/publish-node-package
         with:
-          toNpm: false
           toGithub: true
+          toNpm: true
+          npmToken: ${{ secrets.NPM_TOKEN  }}
 
   create-release:
     runs-on: ubuntu-latest
