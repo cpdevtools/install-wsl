@@ -1,10 +1,12 @@
 {
   "name": "@cpdevtools/install-wsl",
-  "version": "0.0.1-dev.0",
+  "version": "0.0.1-dev.1",
   "repository": "https://github.com/cpdevtools/install-wsl",
   "typings": "./dist/index.d.ts",
   "main": "./dist/index.js",
-  "bin": "./dist/cli.js",
+  "bin": {
+    "install-wsl": "./dist/cli.js"
+  },
   "engines": {
     "node": ">=14.16"
   },
