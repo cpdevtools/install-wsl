@@ -1,3 +1,10 @@
 #!/usr/bin/env node
+import { installOrUpdate } from "./index";
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 
-console.log("hi");
+(async () => {
+  const argv = yargs(hideBin(process.argv)).argv;
+
+  await installOrUpdate();
+})();
