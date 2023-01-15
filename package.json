@@ -1,6 +1,6 @@
 {
   "name": "@cpdevtools/install-wsl",
-  "version": "0.0.1-dev.5",
+  "version": "0.0.1-dev.6",
   "repository": "https://github.com/cpdevtools/install-wsl",
   "typings": "./index.d.ts",
   "main": "./index.js",
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@types/node": "18.11.18",
+    "@types/semver": "7.3.13",
     "husky": "8.0.3",
     "lint-staged": "13.1.0",
     "npm-run-all2": "6.0.4",
@@ -53,6 +54,7 @@
   },
   "dependencies": {
     "@cpdevtools/lib-node-utilities": "0.4.49",
+    "semver": "7.3.8",
     "ts-node": "10.9.1",
     "tslib": "2.4.1",
     "type-fest": "3.5.1",

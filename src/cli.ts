@@ -1,3 +1,6 @@
 #!/usr/bin/env node
+import { installOrUpdate } from "./index";
 
-console.log("hi");
+(async () => {
+  await installOrUpdate();
+})();

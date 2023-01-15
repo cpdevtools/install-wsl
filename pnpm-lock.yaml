@@ -3,10 +3,12 @@ lockfileVersion: 5.4
 specifiers:
   "@cpdevtools/lib-node-utilities": 0.4.49
   "@types/node": 18.11.18
+  "@types/semver": ^7.3.13
   husky: 8.0.3
   lint-staged: 13.1.0
   npm-run-all2: 6.0.4
   prettier: 2.8.2
+  semver: ^7.3.8
   ts-node: 10.9.1
   tslib: 2.4.1
   type-fest: 3.5.1
@@ -14,6 +16,7 @@ specifiers:
 
 dependencies:
   "@cpdevtools/lib-node-utilities": 0.4.49
+  semver: 7.3.8
   ts-node: 10.9.1_awa2wsr5thmg3i7jqycphctjfq
   tslib: 2.4.1
   type-fest: 3.5.1
@@ -21,6 +24,7 @@ dependencies:
 
 devDependencies:
   "@types/node": 18.11.18
+  "@types/semver": 7.3.13
   husky: 8.0.3
   lint-staged: 13.1.0
   npm-run-all2: 6.0.4
@@ -303,6 +307,10 @@ packages:
 
   /@types/normalize-package-data/2.4.1:
     resolution: { integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw== }
+    dev: true
+
+  /@types/semver/7.3.13:
+    resolution: { integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw== }
     dev: true
 
   /acorn-walk/8.2.0:
