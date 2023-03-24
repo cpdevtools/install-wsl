@@ -45,7 +45,7 @@
     "actions-publish": "pnpm run release"
   },
   "devDependencies": {
-    "@types/node": "18.11.18",
+    "@types/node": "18.15.8",
     "@types/semver": "7.3.13",
     "@types/yargs": "^17.0.19",
     "husky": "8.0.3",
